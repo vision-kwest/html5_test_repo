@@ -31,7 +31,7 @@
             "component": "cad/Translate",
             "metadata": {
                 "label": "cad/Translate",
-                "x": 756,
+                "x": 720,
                 "y": 612
             }
         },
@@ -41,6 +41,14 @@
                 "label": "core/Output",
                 "x": 900,
                 "y": 576
+            }
+        },
+        "core/Repeat_who6t": {
+            "component": "core/Repeat",
+            "metadata": {
+                "label": "core/Repeat",
+                "x": 468,
+                "y": 432
             }
         }
     },
@@ -81,6 +89,17 @@
             "metadata": {}
         },
         {
+            "src": {
+                "process": "core/Repeat_who6t",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Kick_3v7eq",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
             "data": "10",
             "tgt": {
                 "process": "core/Kick_3v7eq",
@@ -92,6 +111,13 @@
             "tgt": {
                 "process": "cad/Translate_p5lol",
                 "port": "x"
+            }
+        },
+        {
+            "data": "true",
+            "tgt": {
+                "process": "core/Repeat_who6t",
+                "port": "in"
             }
         }
     ]
