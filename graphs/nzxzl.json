@@ -11,56 +11,87 @@
     "outports": {},
     "groups": [],
     "processes": {
-        "core/Kick_bub71": {
+        "cad/Cube_otelq": {
+            "component": "cad/Cube",
+            "metadata": {
+                "label": "cad/Cube",
+                "x": 648,
+                "y": 432
+            }
+        },
+        "core/Kick_3v7eq": {
             "component": "core/Kick",
             "metadata": {
                 "label": "core/Kick",
-                "x": 504,
-                "y": 468
+                "x": 540,
+                "y": 576
             }
         },
-        "strings/Replace_ds9v1": {
-            "component": "strings/Replace",
+        "cad/Translate_p5lol": {
+            "component": "cad/Translate",
             "metadata": {
-                "label": "strings/Replace",
-                "x": 936,
+                "label": "cad/Translate",
+                "x": 756,
                 "y": 612
+            }
+        },
+        "core/Output_dz6ps": {
+            "component": "core/Output",
+            "metadata": {
+                "label": "core/Output",
+                "x": 900,
+                "y": 576
             }
         }
     },
     "connections": [
         {
             "src": {
-                "process": "core/Kick_bub71",
+                "process": "core/Kick_3v7eq",
                 "port": "out"
             },
             "tgt": {
-                "process": "strings/Replace_ds9v1",
-                "port": "in"
+                "process": "cad/Cube_otelq",
+                "port": "radius"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "cad/Cube_otelq",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "cad/Translate_p5lol",
+                "port": "model"
             },
             "metadata": {
-                "route": 7
+                "route": null
             }
         },
         {
-            "data": "Kwesi",
+            "src": {
+                "process": "cad/Translate_p5lol",
+                "port": "out"
+            },
             "tgt": {
-                "process": "core/Kick_bub71",
+                "process": "core/Output_dz6ps",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "10",
+            "tgt": {
+                "process": "core/Kick_3v7eq",
                 "port": "data"
             }
         },
         {
-            "data": "i",
+            "data": 5,
             "tgt": {
-                "process": "strings/Replace_ds9v1",
-                "port": "pattern"
-            }
-        },
-        {
-            "data": "t",
-            "tgt": {
-                "process": "strings/Replace_ds9v1",
-                "port": "replacement"
+                "process": "cad/Translate_p5lol",
+                "port": "x"
             }
         }
     ]
