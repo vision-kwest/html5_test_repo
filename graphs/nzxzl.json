@@ -1,0 +1,67 @@
+{
+    "properties": {
+        "name": "My Html Five Test",
+        "id": "nzxzl",
+        "project": "html5_test",
+        "environment": {
+            "type": "noflo-browser"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "core/Kick_bub71": {
+            "component": "core/Kick",
+            "metadata": {
+                "label": "core/Kick",
+                "x": 504,
+                "y": 468
+            }
+        },
+        "strings/Replace_ds9v1": {
+            "component": "strings/Replace",
+            "metadata": {
+                "label": "strings/Replace",
+                "x": 936,
+                "y": 612
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "core/Kick_bub71",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "strings/Replace_ds9v1",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 7
+            }
+        },
+        {
+            "data": "Kwesi",
+            "tgt": {
+                "process": "core/Kick_bub71",
+                "port": "data"
+            }
+        },
+        {
+            "data": "i",
+            "tgt": {
+                "process": "strings/Replace_ds9v1",
+                "port": "pattern"
+            }
+        },
+        {
+            "data": "t",
+            "tgt": {
+                "process": "strings/Replace_ds9v1",
+                "port": "replacement"
+            }
+        }
+    ]
+}
